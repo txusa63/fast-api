@@ -68,6 +68,25 @@ pip3 install -r requirements.txt   # Installs all necessary packages if cloned, 
 # To make default branch on fresh git install 
     git config --global init.defaultBranch main
 
+
+git init
+git add --all
+git commit -m "Initial Commit"
+git branch -M main
+git remote add origin https://github.com/txusa63/fast-api.git
+git push -u origin main
+
+
+heroku login
+heroku create <app-name>        # if app-name not included, Heroku will give a random name
+
+git remote      # shows all branches
+git push heroku main
+
+
+# Create a Procfile with
+    web: uvicorn app.main:app --host=0.0.0.0 --port=${PORT:-5000}
+
 ---------------------------------------------
 
 *** Everything up to running postgres command on get route ***
